@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense-tracker</title>
+</head>
+<body>
+    <div id="container">
+        <h2>Total Spent</h2>
+        <h2>Top Category</h2>
+        <h2>Monthly budget Usage</h2>
+        <h2>Trend Graph(Last 7 days) </h2>
+    </div>
+    <!-- Input forms  -->
+     <div id="expense">
+        <h2>Add Expense</h2>
+        <input type="number" placeholder="$">Amount</input>
+        <br>
+        <select name="Category" id="cat">
+            <option value="Food">Food</option>
+            <option value="Transport">Transportation</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Clothes">Clothes</option>
+        </select>
+        <br>
+        <input type="text" placeholder="e.g..Lunch with client">Description</input>
+        <select name="payment-method" id="pay-met">
+            <option value="Credit-card">Credit-card</option>
+            <option value="Cash">Cash</option>
+            <option value="cheque">Cheque</option>
+            <option value="upi">UPI</option>
+        </select>
+        <br>
+        <label for="tags">Enter tags (separated by commas):</label>
+        <input type="text" id="tags" name="tags" placeholder="Buisness, Client Meeting &times; ">
+
+        <input type="checkbox">Recurring?</input> <select name="" id="rec">
+            <option value="Monthly">Monthly</option>
+            <option value="Yearly">Yearly</option>
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+        </select>
+        <button>Add Expense</button>
+     </div >
+
+     <div id="Recent">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>payment-method</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+                <!-- Dynamically adding -->
+            </tbody>
+
+        </table>
+
+     </div>
+</body>
+</html>
