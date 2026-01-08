@@ -15,8 +15,10 @@
     <!-- Input forms  -->
      <div id="expense">
         <h2>Add Expense</h2>
-        <input type="number" placeholder="$">Amount</input>
+        <label for="amt">Amount</label>
+        <input type="number" placeholder="$" id="amt">
         <br>
+        <label for="cat">Category</label>
         <select name="Category" id="cat">
             <option value="Food">Food</option>
             <option value="Transport">Transportation</option>
@@ -24,7 +26,9 @@
             <option value="Clothes">Clothes</option>
         </select>
         <br>
-        <input type="text" placeholder="e.g..Lunch with client">Description</input>
+        <label for="description">Description</label>
+        <input type="text" placeholder="e.g..Lunch with client"id="description">
+        <label for="pay-met">payment-method</label>
         <select name="payment-method" id="pay-met">
             <option value="Credit-card">Credit-card</option>
             <option value="Cash">Cash</option>
@@ -33,18 +37,20 @@
         </select>
         <br>
         <label for="tags">Enter tags (separated by commas):</label>
-        <input type="text" id="tags" name="tags" placeholder="Buisness, Client Meeting &times; ">
-
-        <input type="checkbox">Recurring?</input> <select name="" id="rec">
+        <input type="text" id="tags" name="tags" placeholder="Buisness, Client Meeting ">
+    <label for="rec">Recurring?</label>
+        <input type="checkbox"id="rec">
+        <label for="time">Interval</label>
+         <select name="" id="time">
             <option value="Monthly">Monthly</option>
             <option value="Yearly">Yearly</option>
             <option value="Daily">Daily</option>
             <option value="Weekly">Weekly</option>
         </select>
-        <button>Add Expense</button>
+        <button id="expense-btn">Add Expense</button>
      </div >
 
-     <div id="Recent">
+     <div id="recent">
         <table>
             <thead>
                 <tr>
@@ -55,7 +61,7 @@
                     <th>payment-method</th>
                 </tr>
             </thead>
-            <tbody id="table">
+            <tbody id="expense-table-body">
                 <!-- Dynamically adding -->
             </tbody>
 
