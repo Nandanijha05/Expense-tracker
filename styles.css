@@ -1,0 +1,72 @@
+body{
+    background-color: white;
+    margin: 0;
+    font-family: sans-serif;
+}
+#container{
+    max-width: 900px;
+    /* margin: auto; */
+    margin: 60px auto;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:1px ;
+    border-bottom-right-radius:1px ;
+    display: flex;
+    gap: 16px;
+    flex-direction: row;
+    
+    font-weight: lighter;
+    justify-content: space-between;
+    
+}
+#container h2{
+    flex:1;
+    background:whitesmoke ;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+#expense input,
+#expense select{
+    padding: 8px;
+    font-size: 14px;
+    
+}
+#expense form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#expense label{
+    font-size: 14px;
+}
+#expense-btn{
+    padding: 15px;
+    border-radius: px;
+    cursor: pointer;
+}
+#expense-btn:hover
+{
+    background-color: antiquewhite;
+
+}
+#recent{
+    max-width: 900px;
+    margin: 30px auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background: whitesmoke;
+}

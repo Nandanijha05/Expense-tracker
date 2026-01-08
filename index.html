@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense-tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <div id="container">
-        <h2>Total Spent</h2>
-        <h2>Top Category</h2>
-        <h2>Monthly budget Usage</h2>
-        <h2>Trend Graph(Last 7 days) </h2>
+        <h3>Total Spent</h3>
+        <h3>Top Category</h3>
+        <h3>Monthly budget Usage</h3>
+        <h3>Trend Graph(Last 7 days) </h3>
     </div>
     <!-- Input forms  -->
      <div id="expense">
         <h2>Add Expense</h2>
+        <form id="expense-form">
         <label for="amt">Amount</label>
-        <input type="number" placeholder="$" id="amt">
+        <input type="number" name="amount" placeholder="$" id="amt">
         <br>
         <label for="cat">Category</label>
         <select name="Category" id="cat">
@@ -27,7 +30,8 @@
         </select>
         <br>
         <label for="description">Description</label>
-        <input type="text" placeholder="e.g..Lunch with client"id="description">
+        <input type="text" name="description"placeholder="e.g..Lunch with client"id="description">
+        <br>
         <label for="pay-met">payment-method</label>
         <select name="payment-method" id="pay-met">
             <option value="Credit-card">Credit-card</option>
@@ -38,8 +42,12 @@
         <br>
         <label for="tags">Enter tags (separated by commas):</label>
         <input type="text" id="tags" name="tags" placeholder="Buisness, Client Meeting ">
+        <br>
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date">
+    <br>
     <label for="rec">Recurring?</label>
-        <input type="checkbox"id="rec">
+        <input type="checkbox"id="rec" name="recurring">
         <label for="time">Interval</label>
          <select name="" id="time">
             <option value="Monthly">Monthly</option>
@@ -47,7 +55,9 @@
             <option value="Daily">Daily</option>
             <option value="Weekly">Weekly</option>
         </select>
+        <br>
         <button id="expense-btn">Add Expense</button>
+        </form>
      </div >
 
      <div id="recent">
@@ -68,5 +78,6 @@
         </table>
 
      </div>
+    <script src="script.js"></script>
 </body>
 </html>
