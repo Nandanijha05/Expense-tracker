@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="container">
-        <h3>Total Spent</h3>
+        <h3><span id="total">0</span></h3>
         <h3>Top Category</h3>
         <h3>Monthly budget Usage</h3>
         <h3>Trend Graph(Last 7 days) </h3>
@@ -19,7 +19,7 @@
         <h2>Add Expense</h2>
         <form id="expense-form">
         <label for="amt">Amount</label>
-        <input type="number" name="amount" placeholder="$" id="amt">
+        <input type="number" name="amount" placeholder="$" id="amt" required>
         <br>
         <label for="cat">Category</label>
         <select name="Category" id="cat">
@@ -56,7 +56,7 @@
             <option value="Weekly">Weekly</option>
         </select>
         <br>
-        <button id="expense-btn">Add Expense</button>
+        <button id="expense-btn" type="submit">Add Expense</button>
         </form>
      </div >
 
