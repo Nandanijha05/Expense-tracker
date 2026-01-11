@@ -1,27 +1,28 @@
+var expense_tracker = []
 function calc(){
     var total=0;
-    expense_tracker.forEach(i=>{
-    total=total+expense.amount[i];
+    expense_tracker.forEach(exp=>{
+    total=total+exp.amount;
 });
-document.getElementById("total"),innerText=total;   
+
+
+document.getElementById("total").innerText=total;   
 }
-document.addEventListener("DOMContentLoaded",function(){var expense_tracker=[]
+
+document.addEventListener("DOMContentLoaded",function(){
+    // var expense_tracker=[]
     var data=localStorage.getItem("expense")
 
-const tbody=document.getElementById("expense-table-body")
-console.log(tbody);
+    const tbody=document.getElementById("expense-table-body")
+    console.log(tbody);
 
-if(data!=0){
-    var data=localStorage.getItem("expense")
-    expense_tracker=JSON.parse(data);
-}
-expense_tracker.forEach(exp=>{
-    var row=document.createElement('tr')
+    if(data!=null){
+        var data=localStorage.getItem("expense")
+        expense_tracker=JSON.parse(data);
+    }
+    render();
 
-    row.innerHTML=`<td>${exp.category}</td><td>${exp.description}</td><td>${exp.amount}</td><td>${exp.date1}</td><td>${exp.paymentMethod}</td>`;
-    tbody.appendChild(row);
 
-});
 
 
 var form=document.querySelector("#expense-form");
@@ -61,33 +62,33 @@ const inter = document.getElementById("time");
     console.log(expense_tracker);
     var expense=JSON.stringify(expense_tracker);
     localStorage.setItem("expense",expense);
-    
+    render();
 
 
-    console.log(amount);
-    console.log(category);
-    console.log(description);
-    console.log(paymentMethod);
-    console.log(date1);
-    console.log(isRecurring);
-    console.log(interval);
-    var row=document.createElement('tr');
-    var c1=document.createElement('td')
-    var c2=document.createElement('td')
-    var c3=document.createElement('td')
-    var c4=document.createElement('td')
-    var c5=document.createElement('td')
-    c2.innerText=category
-    c3.innerText=description
-    c1.innerText=amount;
-    c4.innerText=date1
-    c5.innerText=paymentMethod
-    row.appendChild(c2)
-    row.appendChild(c3)
-    row.appendChild(c1)
-    row.appendChild(c4)
-    row.appendChild(c5)
-    tbody.appendChild(row);
+    // console.log(amount);
+    // console.log(category);
+    // console.log(description);
+    // console.log(paymentMethod);
+    // console.log(date1);
+    // console.log(isRecurring);
+    // console.log(interval);
+    // var row=document.createElement('tr');
+    // var c1=document.createElement('td')
+    // var c2=document.createElement('td')
+    // var c3=document.createElement('td')
+    // var c4=document.createElement('td')
+    // var c5=document.createElement('td')
+    // c2.innerText=category
+    // c3.innerText=description
+    // c1.innerText=amount;
+    // c4.innerText=date1
+    // c5.innerText=paymentMethod
+    // row.appendChild(c2)
+    // row.appendChild(c3)
+    // row.appendChild(c1)
+    // row.appendChild(c4)
+    // row.appendChild(c5)
+    // tbody.appendChild(row);
 
 
 
@@ -95,6 +96,15 @@ const inter = document.getElementById("time");
 });
 
 });
+let render=function(){
+    expense_tracker.forEach(exp=>{
+    var row=document.createElement('tr')
+
+    row.innerHTML=`<td>${exp.category}</td><td>${exp.description}</td><td>${exp.amount}</td><td>${exp.date1}</td><td>${exp.paymentMethod}</td>`;
+    tbody.appendChild(row);
+        calc();
+});
+}
 // localStorage.clear();
 
 
