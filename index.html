@@ -9,10 +9,14 @@
 </head>
 <body>
     <div id="container">
-        <h3><span id="total">0</span></h3>
-        <h3>Top Category</h3>
-        <h3>Monthly budget Usage</h3>
-        <h3>Trend Graph(Last 7 days) </h3>
+        <h3><span id="total">$0</span></h3>
+        
+        <h3><!--Top Category--></h3>
+        <h3><!--Monthly Budget Usage--></h3>
+        <h3>Trend Graph for last 7days</h3>
+        <div></div>
+        <canvas id="trendChart" width="400" height="200"></canvas>
+        
     </div>
     <!-- Input forms  -->
      <div id="expense">
@@ -20,9 +24,10 @@
         <form id="expense-form">
         <label for="amt">Amount</label>
         <input type="number" name="amount" placeholder="$" id="amt" required>
+        <div id="error"></div>
         <br>
-        <label for="cat">Category</label>
-        <select name="Category" id="cat">
+        <label for="cat" >Category</label>
+        <select name="Category" id="cat" required>
             <option value="Food">Food</option>
             <option value="Transport">Transportation</option>
             <option value="Entertainment">Entertainment</option>
@@ -30,7 +35,7 @@
         </select>
         <br>
         <label for="description">Description</label>
-        <input type="text" name="description"placeholder="e.g..Lunch with client"id="description">
+        <input type="text" name="description"placeholder="e.g..Lunch with client"id="description" required>
         <br>
         <label for="pay-met">payment-method</label>
         <select name="payment-method" id="pay-met">
@@ -44,7 +49,7 @@
         <input type="text" id="tags" name="tags" placeholder="Buisness, Client Meeting ">
         <br>
     <label for="date">Date</label>
-    <input type="date" id="date" name="date">
+    <input type="date" id="date" name="date" required>
     <br>
     <label for="rec">Recurring?</label>
         <input type="checkbox"id="rec" name="recurring">
@@ -69,6 +74,7 @@
                     <th>Amount</th>
                     <th>Date</th>
                     <th>payment-method</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody id="expense-table-body">
@@ -78,6 +84,8 @@
         </table>
 
      </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -4,7 +4,6 @@ var stop=document.querySelector("#stop")
 var changeColor=function(){
     document.body.style.backgroundColor=randomColor();
 
-
 }
 let interval;
 function StartChangeColor (){
